@@ -11,4 +11,5 @@ export async function controlGradebook(req, res)
 	console.log(student);
 	const results = await pool.query(sql, [student]);
 	console.log(results.rows);
+	res.render("gradebook.ejs", {rows: results.rows})
 }
